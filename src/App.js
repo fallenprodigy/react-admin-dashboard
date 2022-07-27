@@ -22,11 +22,12 @@ import {
   ColorMapping,
   Editor,
 } from "./pages";
+import { useStateContext } from "./contexts/ContextProvider";
 import "./App.css";
 import { FreezePane } from "@syncfusion/ej2/excel-export";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
   return (
     <div>
       <BrowserRouter>
@@ -37,9 +38,7 @@ const App = () => {
                 type="button"
                 className="text-3x1 p-3 hover:drop-shadow-xl
                 hover:bg-light-gray
-                text-white
-
-                "
+                text-white"
                 style={{ background: "blue", borderRadius: "50%" }}
               >
                 <FiSettings />
